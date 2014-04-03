@@ -1,0 +1,81 @@
+\documentclass{article}
+
+\author{John Min}
+
+
+\usepackage[margin=0.5in]{geometry}
+\usepackage{amssymb, amsmath, parallel, mathtools, graphicx, array, pdfpages}
+
+\newcommand{\norm}[1]{\Vert #1 \Vert}
+\newcommand{\Rn}{\R^n}
+\newcommand{\Rm}{\R^m}
+\newcommand{\R}{{\mathbb{R}}}
+\newcommand{\grad}{\nabla}
+\newcommand{\Rnn}{\R^{n\times n}}
+\newcommand{\map}[3]{#1:#2\rightarrow #3}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\Rmn}{\R^{m\times n}}
+\newcommand{\tpose}[1]{#1^{\scriptscriptstyle T}}
+\newcommand{\indicator}[2]{\delta\left(#1 \mid #2 \right)}
+\newcommand{\dx}{\partial x}
+
+\title{MCMC}
+
+\begin{document}
+
+\maketitle
+
+\section{Rejection sampling}
+
+\section{Importance sampling}
+
+\section{Markov Chain Monte Carlo (MCMC)}
+
+Instead of iid sampling from $f(x)$, draw from a Markov Chain with equilibrium density $f$. \\
+
+\noindent
+M.C.
+$p(x_0), p(x_t | x_{t-1})$ \\
+equilibrium density:  $ p_{00}(x): \int p(x_t | x_{t-1}) p_{00}(x_{t-1}) \dx_{t-1} $
+$T p_{00} = p_{00}, Tf = f$. 
+ergodicity, fast-mixing
+
+$p_0 \rightarrow p_1 = T p_0 \rightarrow p_2 = T^2 p_0 \rightarrow p_i = T^i p_0$
+
+\noindent
+We want chains to mix as quickly as possibile and have the right invariant density. \\
+
+\noindent
+Detailed balance:  inflow = outflow \\
+A chain is in detailed balance when inflow equals outflow between states.  (doubly stochastic matrix)
+Flow rate from $i \rightarrow j = p(x_t = i) p(x_{t+1} = j | x_t = i) \\
+j \rightarrow i = p(x_t = j) p(x_{t+1} = i | x_t = j) $.
+
+$\Rightarrow $ $p$ is invariant.
+The detailed balance condition is a sufficient, but not necessary condition for chains to have an invariant distribution.
+
+\subsection{Metropolis-Hastings}
+Goal:  $p(x) p(x' | x) = p(x') p(x | x') \forall x, x'$ \\
+Approach:  propose a sample from $q(x' | x)$.
+		  accept the sample with probability p = $\min \Big(1, \frac{p(x) q(x | x'}{p(x) q (x' | x)} \Big)$ \\
+
+\noindent
+We want:  
+\begin{itemize}
+	\item large $p_{acc}$
+	\item large jump size
+\end{itemize}
+
+
+\noindent
+In the symmetric case where $q(x' | x) = q(x | x')$, the acceptance probability is $\min \Big(1, \frac{p(x')}{p(x)} \Big)$. \\
+
+\noindent
+Independence sampler:  $q(x' | x) = q(x')$. $p_{acc} = \min \Big(1, \frac{p(x')q(x)}{p(x) q(x')} \Big)$ \\
+
+\subsection{Random Walk Metropolis Hastings}
+
+\subsection{Gibbs sampler}
+Metropolis Hastings with acceptance probability 1
+
+\end{document}

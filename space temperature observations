@@ -1,0 +1,50 @@
+space temperature observations
+345-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐001BMSHVATEMSPA-­‐-­‐-­‐VAL001	
+
+space temp predictions
+345-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐000TPOFORTEMSPA001-­‐-­‐-­‐001_Derivative	
+
+
+
+electric load
+345-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐-­‐001EMSSMAMET-­‐-­‐-­‐-­‐-­‐-­‐40132001	
+
+datetime, datetime, load, confidence interval bands, temp
+
+
+TPO predictions for electric
+
+
+
+
+[345].dbo.[345---------000ACS---TURINC---IN001].csv
+[345].dbo.[345---------000ACS---TUROUT---OUT001].csv
+
+[345].dbo.[345---------000SECCNTPEOBUI---INC001].csv
+[345].dbo.[345---------000SECCNTPEOBUI---OUT001].csv
+[345].dbo.[345---------000SECCNTPEOBUI---VAL001].csv
+[345].dbo.[345---------000TPO---ALA---001].csv
+[345].dbo.[345---------000TPOFORELECON001---001].csv
+[345].dbo.[345---------000TPOFORELECON001---001_KPMG_test].csv
+[345].dbo.[345---------000TPOFORELECON001---001_RBF_Params].csv
+[345].dbo.[345---------000TPOFORELECON001---001_stats].csv
+[345].dbo.[345---------000TPOFORELETEC001---001].csv
+[345].dbo.[345---------000TPOFORELETEC001---001_Tenant_load].csv
+
+
+[345].dbo.[345---------000TPONOWTEMSPA001---001].csv
+[345].dbo.[345---------000TPOOPTOCCRDR001---001].csv
+[345].dbo.[345---------000TPOOPTTEMPRH001---001].csv
+[345].dbo.[345---------000TPOOPTTEMRDW001---001].csv
+[345].dbo.[345---------000TPOOPTTEMUPT001---001].csv
+[345].dbo.[345---------001BMSELEMET------VAL001].csv
+[345].dbo.[345---------001BMSHVAFANCWV---VAL001].csv
+[345].dbo.[345---------001BMSHVAFANLCP---VAL001].csv
+[345].dbo.[345---------001BMSHVAFANRAT---VAL001].csv
+[345].dbo.[345---------001BMSHVAFANRHC---SPV001].csv
+[345].dbo.[345---------001BMSHVAFANRHC---VAL001].csv
+[345].dbo.[345---------001BMSHVAFANSAT---SPV001].csv
+[345].dbo.[345---------001BMSHVAFANSAT---VAL001].csv
+[345].dbo.[345---------001BMSHVAMCT------ALA001].csv
+
+

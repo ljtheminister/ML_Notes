@@ -1,0 +1,82 @@
+\documentclass{article}
+
+\title{Mixture Models}
+\author{John Min}
+
+
+\usepackage[margin=0.5in]{geometry}
+
+\newcommand{\norm}[1]{\Vert #1 \Vert}
+\newcommand{\Rn}{\R^n}
+\newcommand{\Rm}{\R^m}
+\newcommand{\R}{{\mathbb{R}}}
+\newcommand{\grad}{\nabla}
+\newcommand{\Rnn}{\R^{n\times n}}
+\newcommand{\map}[3]{#1:#2\rightarrow #3}
+\newcommand{\half}{\frac{1}{2}}
+\newcommand{\Rmn}{\R^{m\times n}}
+\newcommand{\tpose}[1]{#1^{\scriptscriptstyle T}}
+\newcommand{\indicator}[2]{\delta\left(#1 \mid #2 \right)}
+
+
+\usepackage{color}
+\newcommand{\blue}[1]{\textcolor{blue}{#1}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+
+\newcommand{\prox}{\mathrm{prox}}
+\newcommand{\logit}{\mathrm{logit}}
+\newcommand{\tr}{\mathrm{tr}}
+\usepackage{amssymb, amsmath, parallel, mathtools, graphicx, array, pdfpages, epsfig}
+\usepackage{bbm}
+
+
+
+\begin{document}
+\maketitle
+
+\noindent
+Given data $x_1, \ldots x_n,$ arguably, the simplest model for the data $\mathbf{X}$ is to use a single, unimodal probability distribution: 
+$$ x_i \overset{iid}{\sim} p(x | \theta), i = 1, \ldots, n $$
+
+\noindent
+Placing a prior on the unknown $\theta$, we can then calculate the posterior, $p(\theta | x_1, \ldots x_n ) \propto p(x_1, \ldots x_n | \theta) p(\theta) = \displaystyle \prod_{i=1}^n p(x_i | \theta) p(\theta)$ \\
+
+\noindent
+Then, we make the predictions: $p(x_{n+1} | x_1, \ldots, x_n) = \int_\theta p(x_{n+1} | \theta) p(\theta | x_1, \ldots, x_n) \partial \theta$ \\
+
+\noindent
+A \textbf{mixture model} adds a layer of complexity to this.
+\begin{itemize}
+    \item We have a set of $K$ parameters, $\theta_1, \ldots, \theta_K$
+    \item Each observation picks a parameter according to a distribution: $c_i \sim$ Discrete($\pi$), where $\pi$ is a K-dimensional probability distribution
+    \item Given the parameter, the value for $x_i$ is drawn: $x_i \sim p(x | \theta_{c_i})$.
+\end{itemize}
+
+
+\noindent
+$G = \displaystyle \sum_{i=1}^K \pi_i \partial_{\theta_i} \rightarrow$ G is a probability measure. \\
+$\delta_{\theta_i}$ is a delta measure $\rightarrow \delta_{\theta_i}(\theta) = \mathbf{\mathbbm{1}}[{\theta = \theta_i}]$.
+Therefore, $G(\theta_j) = \displaystyle \sum_{i=1}^K \pi_i \delta_{\theta_i}(\theta_j) = \pi_j$ (assuming all $\theta_i$ are unique). 
+
+
+
+
+
+\section*{Dirichlet Distribution}
+The \textbf{Dirichlet distribution} is defined on the probability simplex.  That is, if $\pi \sim $Dir$(\gamma_1, \ldots, \gamma_K)$, then $\pi \in \Delta_K$, which means:
+
+\begin{enumerate}
+    \item $\mathbf{\pi}$ is a K-dimensional vector
+    \item $\mathbf{\pi} \geq 0$
+    \item $\displaystyle \sum_{i=1}^K pi_i = 1$.
+\end{enumerate}
+
+Let's reparameterize using scalar $\alpha$ and probability vector $g_0$: $\alpha = \displaystyle \sum_{i=1}^n \gamma_i, g_{0_i} = \frac{\gamma_i}{\sum_{j=1}^k \gamma_j}$
+
+
+
+
+
+
+\end{document}
